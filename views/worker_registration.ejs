@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Register as a worker</h2>
+
+        <form action="/workerregistration" method="POST" id="workerregister">
+            <label for="name"></label>
+            <input type="text" placeholder="name" id="name" name="name" class="box" />
+            <label for="number"></label>
+            <input type="text" placeholder="number" id="number" name="number" class="box" />
+            <label for="email"></label>
+            <input type="text" placeholder="Email" name="email" id="email" class="box" />
+            <!-- <label for="service"></label>
+            <input type="text" placeholder="service" name="service" id="service" class="box" /> -->
+
+            <div class="form-group">
+                <label for="service">Service</label>
+                <div class="radio inline">
+                    <input type="radio" id="radio-4" name="service" value="Cook">
+                    <label for="radio-4" class="radio-label">Cook</label>
+                </div>
+                <div class="radio inline">
+                    <input type="radio" id="radio-5" name="service" value="Gardener">
+                    <label for="radio-5" class="radio-label">Gardener</label>
+                </div>
+                <div class="radio inline">
+                    <input type="radio" id="radio-5" name="service" value="Cleaner">
+                    <label for="radio-5" class="radio-label">Cleaner</label>
+                </div>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+    <!-- <script src="node.js"></script> -->
+</body>
+
+</html>

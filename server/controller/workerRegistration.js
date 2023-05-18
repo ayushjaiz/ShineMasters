@@ -1,33 +1,31 @@
-const workerModel = require('../model/workerModel');
+const WorkerModel = require('../model/workerModel');
 
-//create a new user
-const registerWorker = (req, res) => {
-    //validate request
-    if (!req.body) {
-        res.status(400).send({ message: "Content cannot be empty" });
-        return;
+const workerRegistration = async (req, res) => {
+    const { name, number, email, service } = req.body
+
+    const worker = await WorkerModel.findOne({ email: email })
+    if (worker) {
+        res.send({ "status": "failed", "message": "Email already exists" })
+    } else {
+        if (name && number && email && service) {
+            try {
+                const doc = new WorkerModel({
+                    name: name,
+                    number: number,
+                    email: email,
+                    service: service
+                })
+                await doc.save()
+                res.status(201).send({ "status": "success", "message": "Worker Registration Success" })
+            } catch (error) {
+                console.log(error)
+                res.send({ "status": "failed", "message": "Unable to Register Worker" })
+            }
+
+        } else {
+            res.send({ "status": "failed", "message": "All fields are required" })
+        }
     }
-
-    //new user
-    const user = new Userdb({
-        name: req.body.name,
-        email: req.body.email,
-        number: req.body.number,
-        service: req.body.service,
-    })
-
-    //save user in database
-    user
-        .save(user)
-        .then(data => {
-            // res.send(data)
-            res.redirect('/add-user')
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occured while creating"
-            })
-        })
 }
 
-module.exports = registerWorker;
+module.exports = workerRegistration;
