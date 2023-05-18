@@ -5,10 +5,9 @@ const services = require('../services/render')
 
 const userRegistrartion = require('../controller/userRegistration')
 const userLogin = require('../controller/userLogin')
-
 const workerRegistrartion = require('../controller/workerRegistration')
 
-route.get('/', (req, res) => { res.send('Hello world') })
+route.get('/', (req, res) => { res.render('main') })
 
 //User login and registration
 route.get('/userregistration', (req, res) => { res.render('user_registration') })
@@ -16,7 +15,6 @@ route.get('/userlogin', (req, res) => { res.render('user_login') })
 
 //worker registration
 route.get('/workerregistration', (req, res) => { res.render('worker_registration') })
-
 
 route.post('/userregistration', userRegistrartion)
 route.post('/userlogin', userLogin)

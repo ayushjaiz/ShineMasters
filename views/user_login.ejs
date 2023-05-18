@@ -11,27 +11,18 @@
 
 <body>
     <div class="wrapper">
-        <div class="container">
-            <h2>Login</h2>
-            <div class="option">
-                <div class="worker active">as worker</div>
-                <div class="space">/</div>
-                <div class="customer">as customer</div>
-            </div>
-            <form action="/userlogin" method="POST" id="userlogin">
-                <label for="email"></label>
-                <input type="text" placeholder="Email" name="email" id="email" class="box" />
-                <label for="password"></label>
-                <input type="text" placeholder="Password" name="password" id="password" class="box" />
-                <button type="submit" class="submit">Submit</button>
-            </form>
+        <h2>Login</h2>
+        <form action="/userlogin" method="POST" id="userlogin">
+            <label for="email"></label>
+            <input type="text" placeholder="Email" name="email" id="email" class="box" />
+            <label for="password"></label>
+            <input type="text" placeholder="Password" name="password" id="password" class="box" />
+            <button type="submit" class="submit">Submit</button>
+        </form>
 
-
-
-            <div class="footer">
-                <div class="text">already a member?</div>
-                <a href="" class="sign">sign in</a>
-            </div>
+        <div class="footer">
+            <div class="text">Not a member?</div>
+            <a href="/userregistration" class="sign">Register</a>
         </div>
     </div>
     <!-- <script src="node.js"></script> -->
