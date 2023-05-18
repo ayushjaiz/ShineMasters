@@ -1,10 +1,11 @@
-const UserModel = require('../models/userModel.js');
+const UserModel = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-exports.userLogin = async (req, res) => {
+const userLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
+
         if (email && password) {
             const user = await UserModel.findOne({ email: email })
             if (user != null) {
@@ -29,3 +30,5 @@ exports.userLogin = async (req, res) => {
         res.status(400).send({ "status": "failed", "message": `${err}` })
     }
 }
+
+module.exports=userLogin;

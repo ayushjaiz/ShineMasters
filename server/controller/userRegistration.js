@@ -1,39 +1,39 @@
-const UserModel = require('../models/user.js');
+const UserModel = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const userRegistrartion = async (req, res) => {
-    const { email, password } = req.body
-
+const userRegistration = async (req, res) => {
+    console.log(req.body);
+    const { name, number, email, password, address } = req.body
     const user = await UserModel.findOne({ email: email })
     if (user) {
         res.send({ "status": "failed", "message": "Email already exists" })
     } else {
-        if (email && password) {
+        if (name && number && email && password && address) {
             try {
                 const salt = await bcrypt.genSalt(10)
-                const hashPassword = await bcrypt.hash(password, salt);
-                const newUser = new UserModel({
+                const hashPassword = await bcrypt.hash(password, salt)
+                const doc = new UserModel({
+                    name: name,
+                    number: number,
                     email: email,
                     password: hashPassword,
+                    address: address
                 })
-                await newUser.save()
+                await doc.save()
                 const saved_user = await UserModel.findOne({ email: email })
-
-                //Generate JWT Token
-                const token = jwt.sign({ userID: saved_user._id },
-                    process.env.JWT_SECRET_KEY,
-                    { expiresIn: '5d' })
-
-                res.status(201).send({ "message": "registration Succesful", "token": token });
+                // Generate JWT Token
+                const token = jwt.sign({ userID: saved_user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
+                res.status(201).send({ "status": "success", "message": "Registration Success", "token": token })
+            } catch (error) {
+                console.log(error)
+                res.send({ "status": "failed", "message": "Unable to Register" })
             }
-            catch (err) {
-                res.send({ "status": "failed", "message": "Unable to register" });
-            }
+
         } else {
-            res.send({ "status": "failed", "message": "Please fill both the fields" })
+            res.send({ "status": "failed", "message": "All fields are required" })
         }
     }
 }
 
-module.exports=userRegistrartion;
+module.exports = userRegistration;
