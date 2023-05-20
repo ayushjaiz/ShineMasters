@@ -6,13 +6,11 @@ const bodyparser = require("body-parser")
 const path = require('path')
 
 const port = process.env.PORT || 8080;
-const dbConnect = require('./server/database/conn')
+const dbConnect = require('./database/conn')
 
 //database coonection
 dbConnect(process.env.MONGODB_URL)
 
-//local request
-app.use(morgan('tiny'));
 
 //parse request to body parser
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -26,7 +24,7 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 //setting routes
-app.use('/', require('./server/routes/router'))
+app.use('/', require('./routes/router'))
 
 //listening to server
 app.listen(port, () => {
