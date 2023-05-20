@@ -7,12 +7,13 @@ const path = require('path')
 const cookieParser = require('cookie-parser');
 const { checkUser } = require('./middleware/auth')
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const dbConnect = require('./database/conn')
 
 //database coonection
 dbConnect(process.env.MONGODB_URL)
-
+    .then((result) => { app.listen(process.env.port); console.log('sever ruunning and database connected') })
+    .catch((err) => console.log(err));
 
 //parse request to body parser
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -31,6 +32,3 @@ app.get('*', checkUser);
 app.use('/', require('./routes/router'))
 
 //listening to server
-app.listen(port, () => {
-    console.log(`server running at http://localhost:${port}`);
-})
