@@ -1,3 +1,3 @@
 exports.chef = (req, res) => {
-    res.render(chef);
+    res.send('this is cook page')
 }

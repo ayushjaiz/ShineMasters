@@ -1,3 +1,3 @@
 exports.worker = (req, res) => {
-    res.render(worker);
+    res.send('this is gardener page')
 }

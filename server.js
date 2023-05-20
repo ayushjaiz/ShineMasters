@@ -4,6 +4,8 @@ const app = express();
 const morgan = require('morgan');
 const bodyparser = require("body-parser")
 const path = require('path')
+const cookieParser = require('cookie-parser');
+const { checkUser } = require('./middleware/auth')
 
 const port = process.env.PORT || 8080;
 const dbConnect = require('./database/conn')
@@ -17,6 +19,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 //set view engine
 app.set("view engine", "ejs")
+app.use(cookieParser());
 // app.set("views", path.resolve(__dirname, "views/ejs"));
 
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
@@ -24,6 +27,7 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 //setting routes
+app.get('*', checkUser);
 app.use('/', require('./routes/router'))
 
 //listening to server

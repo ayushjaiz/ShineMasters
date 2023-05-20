@@ -1,3 +1,3 @@
 exports.cleaner = (req, res) => {
-    res.render(cleaner);
+    res.send('this is cleaner page');
 }

@@ -9,6 +9,6 @@ const workerSchema = new mongoose.Schema({
 })
 
 //Model
-const workerDb = mongoose.model("worker", workerSchema)
+const Worker = mongoose.model("worker", workerSchema)
 
-module.exports = workerDb;
+module.exports = Worker;

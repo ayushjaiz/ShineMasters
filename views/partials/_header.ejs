@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/faefb97bbf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <section class="nav-bar">
+      <div class="nav-bar-image">
+        <img
+          class="nav-bar-img"
+          src="img/main/logo-transparent-png.png"
+          alt="LOGO"
+        />
+      </div>
+
+      <div class="nav-bar-list">
+        <ul>
+          <li>Home</li>
+          <li>Services</li>
+          <li>Pricing</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="nav-bar-button">
+        <% if(user){ %>
+        <a class="links" href="/userdashboard"
+          ><button>Welcome, <%= user.name %></button></a
+        >
+        <a class="links" href="/userdashboard"><button>DASHBOARD</button></a>
+        <a class="links" href="/userlogout"><button>Logout</button></a>
+        <!-- <li class="links">Welcome, <%= user.name %></li> -->
+        <% } else { %>
+        <a class="links" href="/userregistration"><button>REGISER</button></a>
+        <a class="links" href="/userlogin"><button>LOGIN</button></a>
+        <% } %>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,31 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- include header-->
+<%- include('partials/_header.ejs'); -%>
+<!-- include header-->
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Register</title>
-</head>
+<link rel="stylesheet" href="style.css" />
+<div class="wrapper">
+  <h2>Login</h2>
+  <form action="/userlogin" method="POST" id="userlogin">
+    <label for="email"></label>
+    <input
+      type="text"
+      placeholder="Email"
+      name="email"
+      id="email"
+      class="box"
+    />
+    <label for="password"></label>
+    <input
+      type="text"
+      placeholder="Password"
+      name="password"
+      id="password"
+      class="box"
+    />
+    <button type="submit" class="submit">Submit</button>
+  </form>
 
-<body>
-    <div class="wrapper">
-        <h2>Login</h2>
-        <form action="/userlogin" method="POST" id="userlogin">
-            <label for="email"></label>
-            <input type="text" placeholder="Email" name="email" id="email" class="box" />
-            <label for="password"></label>
-            <input type="text" placeholder="Password" name="password" id="password" class="box" />
-            <button type="submit" class="submit">Submit</button>
-        </form>
+  <div class="footer">
+    <div class="text">Not a member?</div>
+    <a href="/userregistration" class="sign">Register</a>
+  </div>
+</div>
+<!-- <script src="node.js"></script> -->
 
-        <div class="footer">
-            <div class="text">Not a member?</div>
-            <a href="/userregistration" class="sign">Register</a>
-        </div>
-    </div>
-    <!-- <script src="node.js"></script> -->
-</body>
-
-</html>
+<!-- include footer-->
+<%- include('partials/_footer.ejs'); -%>
+<!-- include footer-->

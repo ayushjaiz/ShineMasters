@@ -1,11 +1,12 @@
-const UserModel = require('../model/userModel');
+const User = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const maxAge = 3 * 24 * 60 * 60;
 const userRegistration = async (req, res) => {
     console.log(req.body);
     const { name, number, email, password, address } = req.body
-    const user = await UserModel.findOne({ email: email })
+    const user = await User.findOne({ email: email })
     if (user) {
         res.send({ "status": "failed", "message": "Email already exists" })
     } else {
@@ -13,18 +14,18 @@ const userRegistration = async (req, res) => {
             try {
                 const salt = await bcrypt.genSalt(10)
                 const hashPassword = await bcrypt.hash(password, salt)
-                const doc = new UserModel({
+                const doc = new User({
                     name: name,
                     number: number,
                     email: email,
                     password: hashPassword,
                     address: address
                 })
-                await doc.save()
-                const saved_user = await UserModel.findOne({ email: email })
-                // Generate JWT Token
-                const token = jwt.sign({ userID: saved_user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
-                res.status(201).send({ "status": "success", "message": "Registration Success", "token": token })
+                const user = await doc.save()
+                const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
+                res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+                res.status(201).json({ user: user._id });
+
             } catch (error) {
                 console.log(error)
                 res.send({ "status": "failed", "message": "Unable to Register" })

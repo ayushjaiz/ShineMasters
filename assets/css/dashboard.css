@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'roboto', sans-serif;
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    height: 70px;
+    background-color: #f7d024;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar-img {
+    height: 60px;
+    width: 232px;
+    border-radius: 5px;
+    margin-left: 48px;
+}
+
+.nav-bar-list ul {
+    display: flex;
+    list-style: none;
+    margin-right: 4px;
+}
+
+.nav-bar-list ul li {
+    margin: 17px;
+    font-weight: bold;
+}
+
+.nav-bar-button {
+    margin-right: 60px;
+}
+
+.nav-bar-button button {
+    height: 43px;
+    width: 130px;
+    background-color: #282828;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.mid1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* background-color: #c46e6e; */
+}
+
+.mid1 p {
+    font-size: 70px;
+    font-weight: bold;
+
+}
+
+.mid2 {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+
+    background-color: #f7d024;
+    margin: 0px 140px;
+    border-radius: 12px;
+}
+
+.mid2 p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mid2 div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.mid3 {
+    margin-top: 60px;
+}
+
+.mid3 p {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.mid3 hr {
+    height: 4px;
+    border-radius: 4px;
+    width: 422px;
+    background-color: #f7d024;
+    margin-left: 562px;
+    border: 0.2px solid white;
+}
+
+.mid4 {
+    height: 200px;
+    margin-top: 30px;
+
+}
+
+.card1 {
+    height: 80px;
+    margin: 0px 80px;
+    border-radius: 12px;
+    box-shadow: rgb(239, 238, 238) 0px 0px 6px 0px, rgb(239, 238, 238) 0px 0px 12px 0px, rgb(239, 238, 238) 0px 0px 22px 0px, rgb(239, 238, 238) 0px 0px 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card1 div {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card1-sweep {
+    margin-left: 25px;
+}

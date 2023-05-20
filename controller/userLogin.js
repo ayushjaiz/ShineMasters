@@ -1,18 +1,20 @@
-const UserModel = require('../model/userModel');
+const User = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const maxAge = 3 * 24 * 60 * 60;
 const userLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
 
         if (email && password) {
-            const user = await UserModel.findOne({ email: email })
+            const user = await User.findOne({ email: email })
             if (user != null) {
                 const isMatch = await bcrypt.compare(password, user.password)
                 if (user.email === email && isMatch) {
                     const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
-                    res.status(200).send({ "status": "success", "message": "Login Succesful", "token": token })
+                    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+                    res.status(200).send({ "status": "success", "message": "Login Succesful", "token": token, "user": user._id })
                 }
                 else {
                     res.send({ "status": "failed", "message": "Invalid email or password" })
@@ -31,4 +33,4 @@ const userLogin = async (req, res) => {
     }
 }
 
-module.exports=userLogin;
+module.exports = userLogin;

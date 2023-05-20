@@ -1,0 +1,58 @@
+<!-- include header-->
+<%- include('partials/_header.ejs'); -%>
+<!-- include header-->
+
+<link rel="stylesheet" href="css/dashboard.css" />
+
+<section class="mid1">
+  <p>AYUSH JAISWAL</p>
+</section>
+
+<section class="mid2">
+  <div>
+    <p><i class="fa-solid fa-phone-flip"></i> PHONE NO: <%= user.number %></p>
+
+    <P>
+      <i class="fa-solid fa-envelope"></i>
+      EMAIL ID: <%= user.email %>
+    </P>
+
+    <p>
+      <i class="fa-solid fa-location-dot"></i>
+      LOCATION: <%= user.address %>
+    </p>
+  </div>
+</section>
+
+<section class="mid3">
+  <p>WORKER LIST</p>
+  <hr />
+</section>
+
+<section class="mid4">
+  <div class="card1">
+    <div>
+      <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+      <P class="card1-sweep">sweeper</P>
+    </div>
+
+    <div>
+      <p>26,jul,2017-26,jun,2019</p>
+    </div>
+  </div>
+
+  <div class="card1">
+    <div>
+      <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+      <P class="card1-sweep">sweeper</P>
+    </div>
+
+    <div>
+      <p>26,jul,2017-26,jun,2019</p>
+    </div>
+  </div>
+</section>
+
+<!-- include footer-->
+<%- include('partials/_footer.ejs'); -%>
+<!-- include footer-->
