@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60;
 const userRegistration = async (req, res) => {
-    console.log(req.body);
     const { name, number, email, password, address } = req.body
     const user = await User.findOne({ email: email })
     if (user) {
