@@ -11,12 +11,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .nav-bar {
     position: sticky;
     top: 0;
@@ -204,7 +198,7 @@ a:hover {
     display: flex;
     gap: 80px;
     align-items: center;
-    margin-top: 500px;
+    margin-top: 40px;
     background-color: #f1e9e9;
 }
 

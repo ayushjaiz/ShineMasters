@@ -1,37 +1,55 @@
-<!-- include header-->
-<%- include('partials/_header.ejs'); -%>
-<!-- include header-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/userlogin.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="/userlogin" method="POST" id="userlogin" class="container">
+        <h2>Login</h2>
 
-<link rel="stylesheet" href="style.css" />
-<div class="wrapper">
-  <h2>Login</h2>
-  <form action="/userlogin" method="POST" id="userlogin">
-    <label for="email"></label>
-    <input
-      type="text"
-      placeholder="Email"
-      name="email"
-      id="email"
-      class="box"
-    />
-    <label for="password"></label>
-    <input
-      type="text"
-      placeholder="Password"
-      name="password"
-      id="password"
-      class="box"
-    />
-    <button type="submit" class="submit">Submit</button>
-  </form>
+        <div class="fill">
+          <label for="email"></label>
+          <input
+            type="text"
+            placeholder="Email"
+            id="email"
+            name="email"
+            class="box"
+            required
+          />
+          <label for="password"></label>
+          <input
+            type="text"
+            placeholder="Password"
+            id="password"
+            name="password"
+            class="box"
+            required
+          />
+        </div>
 
-  <div class="footer">
-    <div class="text">Not a member?</div>
-    <a href="/userregistration" class="sign">Register</a>
-  </div>
-</div>
-<!-- <script src="node.js"></script> -->
+        <div class="check">
+          <input
+            type="checkbox"
+            id="remember"
+            name="remember"
+            value="remember"
+          />
+          <label for="remember">Remember me</label><br />
+        </div>
 
-<!-- include footer-->
-<%- include('partials/_footer.ejs'); -%>
-<!-- include footer-->
+        <button type="submit" class="login">LOGIN</button>
+
+        <div class="footer">
+          <div class="text">not a member?</div>
+          <a href="/userregistration" class="sign">Register</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,58 +1,93 @@
-<!-- include header-->
-<%- include('partials/_header.ejs'); -%>
-<!-- include header-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/faefb97bbf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
 
-<link rel="stylesheet" href="css/dashboard.css" />
+  <body>
+    <section class="nav-bar">
+      <div class="nav-bar-image">
+        <img
+          class="nav-bar-img"
+          src="img/main/logo-transparent-png.png"
+          alt="LOGO"
+        />
+      </div>
 
-<section class="mid1">
-  <p><%= user.name %></p>
-</section>
+      <div class="nav-bar-list">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>Services</li>
+          <li>Pricing</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
 
-<section class="mid2">
-  <div>
-    <p><i class="fa-solid fa-phone-flip"></i> PHONE NO: <%= user.number %></p>
+      <div class="nav-bar-button">
+        <a class="links" href="/userlogout"><button>Logout</button></a>
+      </div>
+    </section>
 
-    <P>
-      <i class="fa-solid fa-envelope"></i>
-      EMAIL ID: <%= user.email %>
-    </P>
+    <link rel="stylesheet" href="css/dashboard.css" />
 
-    <p>
-      <i class="fa-solid fa-location-dot"></i>
-      LOCATION: <%= user.address %>
-    </p>
-  </div>
-</section>
+    <section class="mid1">
+      <p><%= user.name %></p>
+    </section>
 
-<section class="mid3">
-  <p>WORKER LIST</p>
-  <hr />
-</section>
+    <section class="mid2">
+      <div>
+        <p>
+          <i class="fa-solid fa-phone-flip"></i> PHONE NO: <%= user.number %>
+        </p>
 
-<section class="mid4">
-  <div class="card1">
-    <div>
-      <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
-      <P class="card1-sweep">sweeper</P>
-    </div>
+        <P>
+          <i class="fa-solid fa-envelope"></i>
+          EMAIL ID: <%= user.email %>
+        </P>
 
-    <div>
-      <p>26,jul,2017-26,jun,2019</p>
-    </div>
-  </div>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          LOCATION: <%= user.address %>
+        </p>
+      </div>
+    </section>
 
-  <div class="card1">
-    <div>
-      <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
-      <P class="card1-sweep">sweeper</P>
-    </div>
+    <section class="mid3">
+      <p>WORKER LIST</p>
+      <hr />
+    </section>
 
-    <div>
-      <p>26,jul,2017-26,jun,2019</p>
-    </div>
-  </div>
-</section>
+    <section class="mid4">
+      <div class="card1">
+        <div>
+          <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+          <P class="card1-sweep">sweeper</P>
+        </div>
 
-<!-- include footer-->
-<%- include('partials/_footer.ejs'); -%>
-<!-- include footer-->
+        <div>
+          <p>26,jul,2017-26,jun,2019</p>
+        </div>
+      </div>
+
+      <div class="card1">
+        <div>
+          <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+          <P class="card1-sweep">sweeper</P>
+        </div>
+
+        <div>
+          <p>26,jul,2017-26,jun,2019</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    background: #f7d024;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #ffffff;
+    box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    /* padding-top: 20px; */
+}
+
+h2 {
+    font-family: inherit;
+    position: absolute;
+    top: 5%;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 30px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.fill {
+    position: absolute;
+    top: 17%;
+    display: flex;
+    left: 10%;
+    flex-flow: column wrap;
+    height: 25%;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.box {
+    background: #e7e7e7;
+    border: 0;
+    width: 90%;
+    height: 35%;
+    padding-left: 10px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #888585;
+}
+
+.box:focus {
+    outline: 0;
+    color: #000000;
+}
+
+.check {
+    position: absolute;
+    top: 50%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #212121;
+    left: 12%;
+}
+
+.login {
+    position: absolute;
+    position: absolute;
+    width: 80%;
+    height: 10%;
+    background: #000000;
+    top: 60%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.login:active {
+    transform: scale(0.95);
+}
+
+.login:focus {
+    border: 0;
+}
+
+.login a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 70%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    color: #3c3c3c;
+}
+
+.footer a {
+    color: #3c3c3c;
+    transition: transform 0.5s;
+}
+
+.footer a:hover {
+    transform: scale(0.98);
+}
+
+@media(max-width:950px) {
+    .container {
+        width: 60%;
+    }
+
+    .footer {
+        font-size: 13px;
+    }
+}
