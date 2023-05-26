@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
-    <script
-      src="https://kit.fontawesome.com/faefb97bbf.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
 
-  <body>
-    <section class="nav-bar">
-      <div class="nav-bar-image">
-        <img
-          class="nav-bar-img"
-          src="img/main/logo-transparent-png.png"
-          alt="LOGO"
-        />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://kit.fontawesome.com/faefb97bbf.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
 
-      <div class="nav-bar-list">
-        <ul>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Pricing</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
+<body>
+  <section class="nav-bar">
+    <div class="nav-bar-image">
+      <img class="nav-bar-img" src="img/main/logo-transparent-png.png" alt="LOGO" />
+    </div>
 
-      <div class="nav-bar-button">
-        <% if(user){ %>
-        <a class="links" href="/userdashboard"
-          ><button>Welcome, <%= user.name %></button></a
-        >
+    <div class="nav-bar-list">
+      <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Pricing</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar-button">
+      <% if(user){ %>
+        <a class="links" href="/userdashboard"><button>Welcome, <%= user.name %></button></a>
         <a class="links" href="/userdashboard"><button>DASHBOARD</button></a>
         <!-- <li class="links">Welcome, <%= user.name %></li> -->
         <% } else { %>
-        <a class="links" href="/userregistration"><button>REGISER</button></a>
-        <a class="links" href="/userlogin"><button>LOGIN</button></a>
-        <% } %>
+          <a class="links" href="/userregistration"><button>REGISER</button></a>
+          <a class="links" href="/userlogin"><button>LOGIN</button></a>
+          <% } %>
+    </div>
+  </section>
+
+  <section class="mid0"></section>
+
+  <section class="mid1">
+    <div class="mid1-part1">
+      <p class="mid1-text">INDIAS</p>
+      <p class="trusted">TRUSTED</p>
+      <p class="mid1-text">HOME</p>
+      <p class="mid1-text">MAKERS</p>
+
+      <p class="mid1-part1-text">
+        Shinemasters is the simplest way to get your life in order with the
+        right domestic help
+      </p>
+
+      <button>BOOK NOW</button>
+    </div>
+
+    <div class="mid1-part2">
+      <div class="mid1-part2-image">
+        <img src="img/main/m1.jpeg" alt="" />
+        <img src="img/main/m2webp.webp" alt="" />
+        <img src="img/main/m3.jpeg" alt="" />
+        <img src="img/main/m4.webp" alt="" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="mid0"></section>
+  <section class="mid2">
+    <div>
+      <p class="mid2-t1">Our Featured Services</p>
+      <p class="mid2-t2">Hire professionals,</p>
+      <p class="mid2-t2">trained specifically for your needs</p>
+      <p class="mid2-t4">
+        Shinemasters offers completely certified workers with an complimentary
+        replacement policy
+      </p>
+    </div>
+  </section>
 
-    <section class="mid1">
-      <div class="mid1-part1">
-        <p class="mid1-text">INDIAS</p>
-        <p class="trusted">TRUSTED</p>
-        <p class="mid1-text">HOME</p>
-        <p class="mid1-text">MAKERS</p>
-
-        <p class="mid1-part1-text">
-          Shinemasters is the simplest way to get your life in order with the
-          right domestic help
-        </p>
-
-        <button>BOOK NOW</button>
-      </div>
-
-      <div class="mid1-part2">
-        <div class="mid1-part2-image">
-          <img src="img/main/m1.jpeg" alt="" />
-          <img src="img/main/m2webp.webp" alt="" />
-          <img src="img/main/m3.jpeg" alt="" />
-          <img src="img/main/m4.webp" alt="" />
-        </div>
-      </div>
-    </section>
-
-    <section class="mid2">
-      <div>
-        <p class="mid2-t1">Our Featured Services</p>
-        <p class="mid2-t2">Hire professionals,</p>
-        <p class="mid2-t2">trained specifically for your needs</p>
-        <p class="mid2-t4">
-          Shinemasters offers completely certified workers with an complimentary
-          replacement policy
-        </p>
-      </div>
-    </section>
-
-    <section class="mid3">
+  <section class="mid3">
+    <a href="/cleaner">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k1.png" alt="" />
-        <p>ALL ROUNDER</p>
+        <p>Cleaner</p>
         <img class="mid3-card1-img2" src="img/main/rating.png" alt="" />
       </div>
+    </a>
 
+    <a href="/washer">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k2.png" alt="" />
-        <p>DEOMESTIC HELP</p>
+        <p>Washer</p>
         <img class="mid3-card1-img2" src="img/main/rating.png" alt="" />
       </div>
+    </a>
 
+    <a href="/cook">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k3.png" alt="" />
-        <p>COOKS</p>
+        <p>COOK</p>
         <img class="mid3-card1-img2" src="img/main/rating.png" alt="" />
       </div>
+    </a>
 
+    <a href="/gardener">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k4.png" alt="" />
-        <p>BABY SITTER</p>
+        <p>GARDENER</p>
         <img class="mid3-card1-img2" src="img/main/rating.png" alt="" />
       </div>
+    </a>
 
+    <a href="/painter">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k5.png" alt="" />
-        <p>ELDERLY AND PATEINT CARE</p>
+        <p>Painter</p>
         <img class="mid3-card1-img2" src="img/main/rating.png" alt="" />
       </div>
-    </section>
+  </section>
+  </a>
 
-    <!-- include footer-->
-    <%- include('partials/_footer.ejs'); -%>
+  <!-- include footer-->
+  <%- include('partials/_footer.ejs'); -%>
     <!-- include footer-->
 
     <!-- <section class="bottom">
@@ -152,5 +154,6 @@
 </body>
 
 </html> -->
-  </body>
+</body>
+
 </html>

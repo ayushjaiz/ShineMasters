@@ -1,93 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/dashboard.css" />
-    <script
-      src="https://kit.fontawesome.com/faefb97bbf.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
 
-  <body>
-    <section class="nav-bar">
-      <div class="nav-bar-image">
-        <img
-          class="nav-bar-img"
-          src="img/main/logo-transparent-png.png"
-          alt="LOGO"
-        />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://kit.fontawesome.com/faefb97bbf.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
 
-      <div class="nav-bar-list">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li>Services</li>
-          <li>Pricing</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
+<body>
+  <section class="nav-bar">
+    <div class="nav-bar-image">
+      <img class="nav-bar-img" src="img/main/logo-transparent-png.png" alt="LOGO" />
+    </div>
 
-      <div class="nav-bar-button">
-        <a class="links" href="/userlogout"><button>Logout</button></a>
-      </div>
-    </section>
+    <div class="nav-bar-list">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>Services</li>
+        <li>Pricing</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
 
-    <link rel="stylesheet" href="css/dashboard.css" />
+    <div class="nav-bar-button">
+      <a class="links" href="/userlogout"><button>Logout</button></a>
+    </div>
+  </section>
 
-    <section class="mid1">
-      <p><%= user.name %></p>
-    </section>
+  <section class="mid1">
+    <p>
+      <%= user.name %>
+    </p>
+  </section>
 
-    <section class="mid2">
+  <section class="mid2">
+    <div>
+      <p>
+        <i class="fa-solid fa-phone-flip"></i> PHONE NO: <%= user.number %>
+      </p>
+
+      <P>
+        <i class="fa-solid fa-envelope"></i>
+        EMAIL ID: <%= user.email %>
+      </P>
+
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        LOCATION: <%= user.address %>
+      </p>
+    </div>
+  </section>
+
+  <section class="mid3">
+    <p>WORKER LIST</p>
+    <hr />
+  </section>
+
+  <section class="mid4">
+    <div class="card1">
       <div>
-        <p>
-          <i class="fa-solid fa-phone-flip"></i> PHONE NO: <%= user.number %>
-        </p>
-
-        <P>
-          <i class="fa-solid fa-envelope"></i>
-          EMAIL ID: <%= user.email %>
-        </P>
-
-        <p>
-          <i class="fa-solid fa-location-dot"></i>
-          LOCATION: <%= user.address %>
-        </p>
-      </div>
-    </section>
-
-    <section class="mid3">
-      <p>WORKER LIST</p>
-      <hr />
-    </section>
-
-    <section class="mid4">
-      <div class="card1">
-        <div>
-          <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
-          <P class="card1-sweep">sweeper</P>
-        </div>
-
-        <div>
-          <p>26,jul,2017-26,jun,2019</p>
-        </div>
+        <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+        <P class="card1-sweep">sweeper</P>
       </div>
 
-      <div class="card1">
-        <div>
-          <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
-          <P class="card1-sweep">sweeper</P>
-        </div>
-
-        <div>
-          <p>26,jul,2017-26,jun,2019</p>
-        </div>
+      <div>
+        <p>26,jul,2017-26,jun,2019</p>
       </div>
-    </section>
-  </body>
+    </div>
+
+    <div class="card1">
+      <div>
+        <p><i class="fa-solid fa-user"></i> RAJ TIWARI</p>
+        <P class="card1-sweep">sweeper</P>
+      </div>
+
+      <div>
+        <p>26,jul,2017-26,jun,2019</p>
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>

@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/userlogin.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <form action="/userlogin" method="POST" id="userlogin" class="container">
-        <h2>Login</h2>
 
-        <div class="fill">
-          <label for="email"></label>
-          <input
-            type="text"
-            placeholder="Email"
-            id="email"
-            name="email"
-            class="box"
-            required
-          />
-          <label for="password"></label>
-          <input
-            type="text"
-            placeholder="Password"
-            id="password"
-            name="password"
-            class="box"
-            required
-          />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/userlogin.css" />
+  <title>Login</title>
+</head>
 
-        <div class="check">
-          <input
-            type="checkbox"
-            id="remember"
-            name="remember"
-            value="remember"
-          />
-          <label for="remember">Remember me</label><br />
-        </div>
+<body>
+  <div class="wrapper">
+    <form action="/userlogin" method="POST" id="userlogin" class="container">
+      <h2>Login</h2>
 
-        <button type="submit" class="login">LOGIN</button>
+      <div class="fill">
+        <label for="email"></label>
+        <input type="text" placeholder="Email" id="email" name="email" class="box" required />
+        <label for="password"></label>
+        <input type="text" placeholder="Password" id="password" name="password" class="box" required />
+      </div>
 
-        <div class="footer">
-          <div class="text">not a member?</div>
-          <a href="/userregistration" class="sign">Register</a>
-        </div>
-      </form>
-    </div>
-  </body>
+      <div class="check">
+        <input type="checkbox" id="remember" name="remember" value="remember" />
+        <label for="remember">Remember me</label><br />
+      </div>
+
+      <button type="submit" class="login">LOGIN</button>
+
+      <div class="footer">
+        <div class="text">not a member?</div>
+        <a href="/userregisteration" class="sign">Register</a>
+      </div>
+    </form>
+  </div>
+</body>
+
 </html>

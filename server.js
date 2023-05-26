@@ -6,13 +6,12 @@ const bodyparser = require("body-parser")
 const path = require('path')
 const cookieParser = require('cookie-parser');
 const { checkUser } = require('./middleware/auth')
-
 const port = process.env.PORT || 3000;
 const dbConnect = require('./database/conn')
 
 //database coonection
 dbConnect(process.env.MONGODB_URL)
-    .then((result) => { app.listen(process.env.port); console.log('sever ruunning and database connected') })
+    .then((result) => { app.listen(port); console.log(`sever ruunning at port ${port} and database connected`) })
     .catch((err) => console.log(err));
 
 //parse request to body parser
