@@ -1,6 +1,6 @@
 const Worker = require('../model/workerModel');
 
-const workerRegistration = async (req, res) => {
+const workerRegisteration = async (req, res) => {
     const { name, number, email, service } = req.body
 
     const worker = await Worker.findOne({ email: email })
@@ -16,7 +16,7 @@ const workerRegistration = async (req, res) => {
                     service: service
                 })
                 await doc.save()
-                res.status(201).send({ "status": "success", "message": "Worker Registration Success" })
+                res.status(201).send({ "status": "success", "message": "Worker RworkerRegisteration Success" })
             } catch (error) {
                 console.log(error)
                 res.send({ "status": "failed", "message": "Unable to Register Worker" })
@@ -28,4 +28,4 @@ const workerRegistration = async (req, res) => {
     }
 }
 
-module.exports = workerRegistration;
+module.exports = workerRegisteration;

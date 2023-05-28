@@ -45,7 +45,7 @@ a {
 
 .nav-bar-button button {
     height: 43px;
-    width: 130px;
+    width: 157px;
     background-color: #282828;
     border-radius: 4px;
     color: #ffffff;
@@ -176,9 +176,9 @@ a {
 }
 
 .mid3-card1 p {
+    margin-top: 13px;
     font-size: 16px;
     font-weight: bold;
-
 }
 
 .mid3-card1-img1 {
@@ -188,7 +188,7 @@ a {
 
 .mid3-card1-img2 {
     /* height: 27px; */
-    width: 194px;
+    width: 186px;
     border-radius: 6px;
     border: 1px solid white;
 }
@@ -221,4 +221,38 @@ a {
 .mid3 a {
     text-decoration: none;
     color: #000000;
+}
+
+.button-32 {
+    left: 42.5%;
+    position: relative;
+    margin: 33px 28px 0px 0px;
+    background-color: #282828;
+    color: #fff;
+    border-radius: 12px;
+    /* color: #000; */
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    transition: 200ms;
+    width: 15%;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
+}
+
+.button-32:disabled {
+    filter: saturate(0.2) opacity(0.5);
+    -webkit-filter: saturate(0.2) opacity(0.5);
+    cursor: not-allowed;
 }

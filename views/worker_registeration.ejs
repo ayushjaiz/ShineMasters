@@ -1,51 +1,39 @@
-<!-- include header-->
-<%- include('partials/_header.ejs'); -%>
-<!-- include header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/workerregisteration.css" />
+  <title>Register</title>
+</head>
 
 <body>
   <div class="wrapper">
-    <h2>Register as a worker</h2>
+    <form action="/workerregisteration" method="POST" id="userlogin" class="container">
+      <h2>Register as a worker</h2>
+      <div class="fill">
+        <label for="name"></label>
+        <input type="text" placeholder="Name" id="name" class="box" name="name" required />
+        <label for="phone"></label>
+        <input type="text" placeholder="Phone No." id="phone" class="box" name="number" required />
+        <label for="email"></label>
+        <input type="text" placeholder="Email" id="email" class="box" name="email" required />
 
-    <form action="/workerregistration" method="POST" id="workerregister">
-      <label for="name"></label>
-      <input type="text" placeholder="name" id="name" name="name" class="box" />
-      <label for="number"></label>
-      <input
-        type="text"
-        placeholder="number"
-        id="number"
-        name="number"
-        class="box"
-      />
-      <label for="email"></label>
-      <input
-        type="text"
-        placeholder="Email"
-        name="email"
-        id="email"
-        class="box"
-      />
+        <select name="service" id="lang">
+          <option value="">Service</option>
+          <option value="cleaner">Cleaner</option>
+          <option value="washer">Washer</option>
+          <option value="cook">Cook</option>
+          <option value="gardener">gardener</option>
+          <option value="painter">Painter</option>
+        </select>
 
-      <div class="form-group">
-        <label for="service">Service</label>
-        <div class="radio inline">
-          <input type="radio" id="radio-4" name="service" value="Cook" />
-          <label for="radio-4" class="radio-label">Cook</label>
-        </div>
-        <div class="radio inline">
-          <input type="radio" id="radio-5" name="service" value="Gardener" />
-          <label for="radio-5" class="radio-label">Gardener</label>
-        </div>
-        <div class="radio inline">
-          <input type="radio" id="radio-5" name="service" value="Cleaner" />
-          <label for="radio-5" class="radio-label">Cleaner</label>
-        </div>
       </div>
-      <button type="submit" class="submit">Submit</button>
+      <button type="submit" class="login">Register</button>
     </form>
   </div>
-  <!-- <script src="node.js"></script> -->
-  <!-- include footer-->
-  <%- include('partials/_footer.ejs'); -%>
-  <!-- include footer-->
 </body>
+
+</html>

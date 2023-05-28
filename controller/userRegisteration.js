@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60;
-const userRegistration = async (req, res) => {
+const userRegisteration = async (req, res) => {
     const { name, number, email, password, address } = req.body
     const user = await User.findOne({ email: email })
     if (user) {
@@ -23,7 +23,8 @@ const userRegistration = async (req, res) => {
                 const user = await doc.save()
                 const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                 res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
-                res.status(201).json({ user: user._id });
+                // res.redirect('/');
+                res.send('success');
 
             } catch (error) {
                 console.log(error)
@@ -36,4 +37,4 @@ const userRegistration = async (req, res) => {
     }
 }
 
-module.exports = userRegistration;
+module.exports = userRegisteration;

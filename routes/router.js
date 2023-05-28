@@ -18,6 +18,7 @@ route.get('/workerregisteration', (req, res) => { res.render('worker_registerati
 
 route.post('/userregisteration', userRegisteration)
 route.post('/userlogin', userLogin)
+route.post('/workeregisteration', workerRegisteration)
 
 route.post('/workerregisteration', workerRegisteration)
 
