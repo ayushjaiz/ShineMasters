@@ -5,6 +5,7 @@ const userRegisteration = require('../controller/userRegisteration')
 const userLogin = require('../controller/userLogin')
 const workerRegisteration = require('../controller/workerRegisteration')
 const userLogout = require('../controller/userLogout')
+const showWorker = require('../controller/cleaner')
 
 route.get('/', (req, res) => { res.render('main') })
 
@@ -13,6 +14,10 @@ route.get('/userregisteration', (req, res) => { res.render('user_registeration')
 route.get('/userlogin', (req, res) => { res.render('user_login') })
 route.get('/userdashboard', (req, res) => { res.render('user_dashboard') })
 route.get('/userlogout', userLogout);
+
+//show worker
+route.get('/worker/:service', showWorker);
+
 //worker registeration
 route.get('/workerregisteration', (req, res) => { res.render('worker_registeration') })
 
@@ -22,7 +27,7 @@ route.post('/workeregisteration', workerRegisteration)
 
 route.post('/workerregisteration', workerRegisteration)
 
-route.get('/cleaner', (req, res) => { res.render('cleaner') })
+// route.get('/cleaner', (req, res) => { res.render('cleaner') })
 
 
 // route.put('/api/users/:id',controller.update);
