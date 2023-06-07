@@ -1,0 +1,28 @@
+<%for(var i=0;i<workers.length;i++){%>
+    <div class="mid2-card1">
+        <div class="profile">
+            <p><i class="fa-solid fa-user"></i></p>
+        </div>
+        <h3>
+            <%=workers[i].name%>
+        </h3>
+        <div class="info">
+            <p>
+                <i class="fa-solid fa-circle-info"></i>
+                <%= workers[i].service.charAt(0).toUpperCase() + workers[i].service.slice(1)%>
+            </p>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <%= workers[i].email%>
+            </p>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <%= workers[i].number%>
+            </p>
+            <!-- <p><i class="fa-solid fa-location-dot"></i> Delhi</p> -->
+        </div>
+        <a href="/book?id=<%=workers[i]._id%>&user=<%=user._id%>">
+            <button class=" book_now_button">Book Now</button>
+        </a>
+    </div>
+    <%}%>

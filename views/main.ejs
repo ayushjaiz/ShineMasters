@@ -28,8 +28,8 @@
 
     <div class="nav-bar-button">
       <% if(user){ %>
-        <a class="links" href="/userdashboard"><button>Welcome, <%= user.name %></button></a>
-        <a class="links" href="/userdashboard"><button>DASHBOARD</button></a>
+        <a class="links" href="/userdashboard?id=<%= user._id %>"><button>Welcome, <%= user.name %></button></a>
+        <a class="links" href="/userdashboard?id=<%= user._id %>"><button>DASHBOARD</button></a>
         <!-- <li class="links">Welcome, <%= user.name %></li> -->
         <% } else { %>
           <a class="links" href="/userregisteration"><button>REGISER</button></a>
@@ -76,9 +76,8 @@
       </p>
     </div>
   </section>
-
   <section class="mid3">
-    <a href="/cleaner">
+    <a href="/worker?service=cleaner">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k1.png" alt="" />
         <p>Cleaner</p>
@@ -86,7 +85,7 @@
       </div>
     </a>
 
-    <a href="/washer">
+    <a href="/worker?service=washer">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k2.png" alt="" />
         <p>Washer</p>
@@ -94,7 +93,7 @@
       </div>
     </a>
 
-    <a href="/cook">
+    <a href="/worker?service=cook">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k3.png" alt="" />
         <p>COOK</p>
@@ -102,7 +101,7 @@
       </div>
     </a>
 
-    <a href="/gardener">
+    <a href="/worker?service=gardener">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k4.png" alt="" />
         <p>GARDENER</p>
@@ -110,7 +109,7 @@
       </div>
     </a>
 
-    <a href="/painter">
+    <a href="/worker?service=painter">
       <div class="mid3-card1">
         <img class="mid3-card1-img1" src="img/main/k5.png" alt="" />
         <p>Painter</p>

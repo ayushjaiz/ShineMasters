@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
 const bodyparser = require("body-parser")
 const path = require('path')
 const cookieParser = require('cookie-parser');
@@ -11,7 +10,7 @@ const dbConnect = require('./database/conn')
 
 //database coonection
 dbConnect(process.env.MONGODB_URL)
-    .then((result) => { app.listen(port); console.log(`sever ruunning at port ${port} and database connected`) })
+    .then((result) => { app.listen(port); console.log(`server ruunning at port ${port} and database connected`) })
     .catch((err) => console.log(err));
 
 //parse request to body parser
@@ -29,5 +28,3 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 //setting routes
 app.get('*', checkUser);
 app.use('/', require('./routes/router'))
-
-//listening to server

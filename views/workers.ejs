@@ -13,7 +13,6 @@
 <body>
 
     <section class="nav-bar">
-
         <div class="nav-bar-image">
             <img class="nav-bar-img" src="img/main/logo-transparent-png.png" alt="LOGO" />
         </div>
@@ -33,11 +32,14 @@
     </section>
 
     <section class="mid1">
-        <p>CLEANERS we have!</p>
+        <p>
+            <%=service.toUpperCase()+'S'%> we have!
+        </p>
+
     </section>
     <div class="wrapper">
         <section class="mid2">
-            <%- include('partials/_show_cleaner.ejs'); -%>
+            <%- include('partials/_display_workers.ejs'); -%>
         </section>
     </div>
 </body>
