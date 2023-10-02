@@ -16,7 +16,8 @@ const workerRegisteration = async (req, res) => {
                     service: service
                 })
                 await doc.save()
-                res.status(201).send({ "status": "success", "message": "Worker RworkerRegisteration Success" })
+                res.redirect('/');
+                // res.status(201).send({ "status": "success", "message": "Worker RworkerRegisteration Success" })
             } catch (error) {
                 console.log(error)
                 res.send({ "status": "failed", "message": "Unable to Register Worker" })

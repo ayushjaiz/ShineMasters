@@ -6,7 +6,8 @@ const bookCleaner = async (req, res) => {
     try {
         const bookedWorker = await Worker.findByIdAndUpdate({ _id: id }, { avaliable: false });
         const result = await User.update({ _id: user }, { $push: { bookedWorkers: { $each: [id] } } })
-        res.send({ bookedWorker, result })
+        // res.send({ bookedWorker, result });
+        res.redirect('/');
     }
     catch (err) {
         console.log(err);

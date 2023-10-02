@@ -6,10 +6,10 @@ const requireAuth = (req, res, next) => {
 
     //check json web token exists and is verified
     if (token) {
-        jwt.verify(token, 'net ninja secret', (err, decodedToken) => {
+        jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decodedToken) => {
             if (err) {
                 console.log(err.message)
-                res.redirect('/login');
+                res.redirect('/userlogin');
             }
             else {
                 console.log(decodedToken)
@@ -18,7 +18,7 @@ const requireAuth = (req, res, next) => {
         })
     }
     else {
-        res.redirect('/login');
+        res.redirect('/userlogin');
     }
 }
 
@@ -40,7 +40,6 @@ const checkUser = (req, res, next) => {
         })
     }
     else {
-        console.log('3')
         res.locals.user = null;
         next();
     }

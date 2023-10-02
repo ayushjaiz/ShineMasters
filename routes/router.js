@@ -7,7 +7,8 @@ const workerRegisteration = require('../controller/workerRegisteration')
 const userLogout = require('../controller/userLogout')
 const showWorker = require('../controller/showWorker')
 const bookWorker = require('../controller/bookWorker')
-const myBookedWorker = require('../controller/myBookedWorkers')
+const myBookedWorker = require('../controller/myBookedWorkers');
+const { requireAuth } = require('../middleware/auth');
 
 route.get('/', (req, res) => { res.render('main') })
 
@@ -20,7 +21,7 @@ route.get('/userlogout', userLogout);
 
 //workers
 route.get('/workerregisteration', (req, res) => { res.render('worker_registeration') })
-route.get('/worker', showWorker);
+route.get('/worker', requireAuth, showWorker);
 route.get('/book', bookWorker);
 
 route.post('/userregisteration', userRegisteration)

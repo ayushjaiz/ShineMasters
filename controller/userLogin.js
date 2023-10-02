@@ -14,8 +14,8 @@ const userLogin = async (req, res) => {
                 if (user.email === email && isMatch) {
                     const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-                    // res.redirect('/');
-                    res.send("success");
+                    res.redirect('/');
+                    // res.status(201).json(user);
                 }
                 else {
                     res.send({ "status": "failed", "message": "Invalid email or password" })

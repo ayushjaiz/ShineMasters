@@ -23,8 +23,8 @@ const userRegisteration = async (req, res) => {
                 const user = await doc.save()
                 const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                 res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
-                // res.redirect('/');
-                res.send('success');
+                res.redirect('/');
+                // res.send('success');
 
             } catch (error) {
                 console.log(error)
